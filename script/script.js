@@ -23,7 +23,7 @@ const jump = ()=> {
         //mario position + convert to number
     
         // small or equal to 120px and still display in screen and mario jumps is less than 80px stop animation
-        if(pipePosition <= 120 && pipePosition > 0 && marioPosition < 70 ){
+        if(pipePosition <= 120 && pipePosition > 0 && marioPosition < 80 ){
 
             pipe.style.animation = 'none';
             pipe.style.left = `${pipePosition}px`;
