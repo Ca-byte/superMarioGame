@@ -19,15 +19,21 @@ body {
     background: linear-gradient(#87CEEB, #E0F6FF)
 }
 
+.bg-game-over{
+    display: flex;
+    justify-content: center;
+    
+}
 .btn-coin{
     cursor: pointer;
+    position: absolute;
 }
 
 .img-coin {
-    position: absolute;
+    position: fixed;
     width: 120px;
-    bottom: 160px;
-    right: 700px;
+    bottom: 500px;
+    right: 750px;
     /* display: none; */
 }
 

@@ -1,4 +1,5 @@
 const gameBoard = document.querySelector('.game-board');
+const bgGameOver = document.querySelector('.bg-game-over')
 const mario = document.querySelector('.mario');
 const pipe = document.querySelector('.pipe');
 const btnCoin = document.querySelector('.btn-coin');
@@ -25,10 +26,10 @@ const jump = ()=> {
         // small or equal to 120px and still display in screen and mario jumps is less than 80px stop animation
         if(pipePosition <= 120 && pipePosition > 0 && marioPosition < 80 ){
 
-            pipe.style.animation = 'none';
+            pipe.style.animation = 'hidden';
             pipe.style.left = `${pipePosition}px`;
 
-            mario.style.animation = 'none';
+            mario.style.animation = 'hidden';
             mario.style.bottom = `${marioPosition}px`;
 
             //change image when game is over
@@ -39,9 +40,8 @@ const jump = ()=> {
             //background image game over
             setTimeout(()=> {
                 img.src = './images/game-over-final.png'
-                gameBoard.appendChild(img);
-                gameBoard.setAttribute('style', "position: absolute")
-                gameBoard.setAttribute('style', "text-align:center")
+                bgGameOver.appendChild(img);
+                img.setAttribute('style', "position: absolute");
                 btnCoin.setAttribute('style', "display: block");
         
             }, 1000);
@@ -54,13 +54,11 @@ const jump = ()=> {
     
     function test(){
         console.log("here")
-        btnCoin.setAttribute('style', "display: none");
+        btnCoin.setAttribute('style', "visibility: hidden");
         img.remove()
-        // pipe.style.animation = 'block';
-        // pipe.style.left = `${pipePosition}px`;
-
-        // mario.style.animation = 'block';
-        // mario.style.bottom = `${marioPosition}px`;
+        window.location.reload()
+    
+        
         
     }
     btnCoin.addEventListener('click', test);
