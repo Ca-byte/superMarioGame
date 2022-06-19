@@ -27,14 +27,13 @@ body {
 .btn-coin{
     cursor: pointer;
     position: absolute;
+    bottom: 177px;
+    right: 611px;
 }
 
 .img-coin {
-    position: fixed;
     width: 120px;
-    bottom: 500px;
-    right: 900px;
-    /* display: none; */
+    border: none;
 }
 
 .clouds {
