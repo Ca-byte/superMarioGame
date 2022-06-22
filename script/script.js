@@ -3,6 +3,7 @@ const bgGameOver = document.querySelector('.bg-game-over')
 const mario = document.querySelector('.mario');
 const pipe = document.querySelector('.pipe');
 const btnCoin = document.querySelector('.btn-coin');
+const score = document.querySelector('.score-point');
 
 btnCoin.setAttribute('style', "display: none");
 
@@ -18,6 +19,7 @@ const jump = ()=> {
     const img = document.createElement("img");
     const marioPosition = +window.getComputedStyle(mario).bottom.replace('px', '');
     const pipePosition = pipe.offsetLeft;
+    let count = 0;
     const loop = setInterval(()=> {
         //check pipe position
 
@@ -48,11 +50,24 @@ const jump = ()=> {
 
             //stop function when if finish
             clearInterval(loop)
+        } else {
+            
+            let counts=setInterval(updated);
+            let count = 0;
+            function updated(){
+               let score = document.querySelector('.score-point');
+               score.innerHTML = ++count;
+               console.log(count)
+                if(count === 0)
+                {
+                    clearInterval(counts);
+                }
+            }
         }
         
     },10)
     
-    function test(){
+    function restart(){
         console.log("here")
         btnCoin.setAttribute('style', "visibility: hidden");
         img.remove()
@@ -61,8 +76,7 @@ const jump = ()=> {
         
         
     }
-    btnCoin.addEventListener('click', test);
+    btnCoin.addEventListener('click', restart);
 }
-
 
 document.addEventListener('keydown', jump);

@@ -13,7 +13,7 @@ body {
     position: relative;
     width: 80%;
     height: 90vh;
-    border-bottom: 200px solid rgb(9, 129, 17);
+    border-bottom: 200px solid #098111;
     margin: 0 auto;
     overflow: hidden;
     background: linear-gradient(#87CEEB, #E0F6FF)
@@ -24,6 +24,31 @@ body {
     justify-content: center;
     
 }
+.score {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+   
+}
+
+.score-text {
+    font-family: 'Press Start 2P', cursive;
+    font-weight: bold;
+    color: #FFFFFF;
+    font-size: 24px;
+    padding: 10px;
+
+}
+
+.score-point {
+    font-family: 'Press Start 2P', cursive;
+    font-weight: bold;
+    color: #098111;
+    font-size: 24px;
+    padding: 10px;
+
+}
+
 .btn-coin{
     cursor: pointer;
     position: absolute;
